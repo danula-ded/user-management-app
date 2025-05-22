@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { UserService, User } from '@app/services/user.service';
 
@@ -18,6 +19,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
     CommonModule,
     RouterModule,
     FormsModule,
+    HttpClientModule,
     NzTableComponent,
     NzButtonModule,
     NzSpinModule,
