@@ -1,0 +1,25 @@
+<div class="details-container">
+  <nz-card *ngIf="user && !loading" [nzTitle]="'Информация о пользователе'">
+    <nz-descriptions nzBordered [nzColumn]="1">
+      <nz-descriptions-item nzTitle="Имя">{{ user.name }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Email">{{
+        user.email
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Username">{{
+        user.username
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Телефон">{{
+        user.phone
+      }}</nz-descriptions-item>
+      <nz-descriptions-item nzTitle="Сайт">{{
+        user.website
+      }}</nz-descriptions-item>
+    </nz-descriptions>
+    <div class="footer">
+      <button nz-button nzType="default" (click)="back()">
+        <span nz-icon nzType="arrow-left"></span>
+        Назад к списку
+      </button>
+    </div>
+  </nz-card>
+</div>

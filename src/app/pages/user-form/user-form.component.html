@@ -1,0 +1,63 @@
+<div class="form-container">
+  <nz-card
+    [nzTitle]="userId ? 'Редактирование пользователя' : 'Создание пользователя'"
+  >
+    <form
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      nz-form
+      [nzLayout]="'vertical'"
+    >
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true" nzFor="name">Имя</nz-form-label>
+        <nz-form-control nzErrorTip="Имя обязательно">
+          <input nz-input formControlName="name" id="name" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true" nzFor="email">Email</nz-form-label>
+        <nz-form-control [nzErrorTip]="'Введите корректный email'">
+          <input nz-input formControlName="email" id="email" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzRequired]="true" nzFor="username"
+          >Username</nz-form-label
+        >
+        <nz-form-control nzErrorTip="Обязательно">
+          <input nz-input formControlName="username" id="username" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label nzFor="phone">Телефон</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="phone" id="phone" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label nzFor="website">Сайт</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="website" id="website" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <div class="footer">
+        <button nz-button nzType="default" (click)="cancel()">
+          <span nz-icon nzType="arrow-left"></span> Назад
+        </button>
+        <button nz-button nzType="primary" [disabled]="form.invalid || loading">
+          <span
+            nz-icon
+            [nzType]="userId ? 'save' : 'plus'"
+            nzTheme="outline"
+          ></span>
+          {{ userId ? "Сохранить" : "Создать" }}
+        </button>
+      </div>
+    </form>
+  </nz-card>
+</div>
